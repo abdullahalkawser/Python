@@ -14,6 +14,7 @@ print('Hellow worlds')
 
 # String Operations:
 
+
 #1. Concatenation:
 
 first_name = "Abdullah"
@@ -36,6 +37,9 @@ print(word[2])  # Output: t (third character)
 #4. Slicing Strings:
 word = "Python"
 print(word[0:])
+print(word[:])  # Copy all characters
+print(word[:3])  # Output: Pyt (characters from index 0 to 2)
+
 print(word[1:4])  # Output: yth (characters from index 1 to 3)
 
 #5. String Length:
@@ -48,6 +52,7 @@ sentence = "   Hello, World!   "
 print(sentence.lower())  # Output: hello, world!
 print(sentence.upper())  # Output: HELLO, WORLD!
 print(sentence.strip())  # Output: Hello, World!
+print(sentence.find("Hello"))
 print(sentence.replace("World", "Python"))  # Output: Hello, Python!
 words = sentence.split(",")
 print(words)  # Output: ['Hello', ' World!   ']
