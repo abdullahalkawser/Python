@@ -1,6 +1,8 @@
 import math
 
 
+#Primitive Data Types in Python
+
 print(10 + 3)  # Addition: 10 + 3 = 13
 print(10 - 3)  # Subtraction: 10 - 3 = 7
 print(10 * 3)  # Multiplication: 10 * 3 = 30
