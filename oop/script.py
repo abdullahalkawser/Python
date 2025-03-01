@@ -1,0 +1,53 @@
+name = 'abdullah';
+age = '38';
+print(name, age);
+print(type(name), type(age));
+
+# declare create a class
+
+
+class Person:
+    def __init__(self, name, age):  # Correct attribute names
+        self.name = name  
+        self.age = age  
+
+    def speak(self):
+        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+
+# Correct way to create an object
+dogs = Person('abdullah', 38)  # Separate name and age
+
+
+# Printing attributes
+print(dogs.name, dogs.age)  # This will print: abdullah 38
+
+# Calling the method
+dogs.speak()  # Output: Hello, my name is abdullah and I am 38 years old.
+
+
+# class Person:
+#     def __init__(self,name,age):
+#         self.nam = name;
+#         self.ag = age;
+      
+
+#     def bark(self):
+#         print('whoof whoof');
+
+# dogs = Person('abdullah, 38');
+# print(dogs.name,dogs.age);
+# dogsas = Person('kawser, 80');
+# print(dogsas.name,dogsas.age);
+# # dog.bark();
+
+class Dogs:
+    def __init__(self, name, age, color):
+        self.name = name;
+        self.age = age;
+        self.color = color;
+    def bark(self):
+        print('whoof whoof');
+
+person = Dogs('kawser',30,'black');
+print(person.name,person.age,person.color);
+person.bark();
