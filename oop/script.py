@@ -40,14 +40,16 @@
 # print(dogsas.name,dogsas.age);
 # # dog.bark();
 
+
+# Combining objects
 class Dogs:
     def __init__(self, name, age, color, owner):
-        self.name = name
+        self.name = name #storing value
         self.age = age
         self.color = color
         self.owner = owner  # Correctly assign the owner object
 
-    def bark(self):
+    def bark(self): # defining methon
         print('whoof whoof')
 
 class Owner:
