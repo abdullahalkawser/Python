@@ -1,28 +1,28 @@
-name = 'abdullah';
-age = '38';
-print(name, age);
-print(type(name), type(age));
+# name = 'abdullah';
+# age = '38';
+# print(name, age);
+# print(type(name), type(age));
 
-# declare create a class
-
-
-class Person:
-    def __init__(self, name, age):  # Correct attribute names
-        self.name = name  
-        self.age = age  
-
-    def speak(self):
-        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
-
-# Correct way to create an object
-dogs = Person('abdullah', 38)  # Separate name and age
+# # declare create a class
 
 
-# Printing attributes
-print(dogs.name, dogs.age)  # This will print: abdullah 38
+# class Person:
+#     def __init__(self, name, age):  # Correct attribute names
+#         self.name = name  
+#         self.age = age  
 
-# Calling the method
-dogs.speak()  # Output: Hello, my name is abdullah and I am 38 years old.
+#     def speak(self):
+#         print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+
+# # Correct way to create an object
+# dogs = Person('abdullah', 38)  # Separate name and age
+
+
+# # Printing attributes
+# print(dogs.name, dogs.age)  # This will print: abdullah 38
+
+# # Calling the method
+# dogs.speak()  # Output: Hello, my name is abdullah and I am 38 years old.
 
 
 # class Person:
@@ -41,13 +41,28 @@ dogs.speak()  # Output: Hello, my name is abdullah and I am 38 years old.
 # # dog.bark();
 
 class Dogs:
-    def __init__(self, name, age, color):
-        self.name = name;
-        self.age = age;
-        self.color = color;
-    def bark(self):
-        print('whoof whoof');
+    def __init__(self, name, age, color, owner):
+        self.name = name
+        self.age = age
+        self.color = color
+        self.owner = owner  # Correctly assign the owner object
 
-person = Dogs('kawser',30,'black');
-print(person.name,person.age,person.color);
-person.bark();
+    def bark(self):
+        print('whoof whoof')
+
+class Owner:
+    def __init__(self, name, address, number):
+        self.name = name
+        self.address = address
+        self.number = number
+
+# Correct variable name and instantiation
+owner = Owner('Abdullah', 'Dhaka', 847755)
+
+# Pass the 'owner' object without parentheses
+person = Dogs('Kawser', 30, 'black', owner)
+print(person.owner.name)
+
+# Print details
+print(person.name, person.age, person.color)
+person.bark()
