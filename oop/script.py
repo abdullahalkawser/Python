@@ -42,29 +42,52 @@
 
 
 # Combining objects
-class Dogs:
-    def __init__(self, name, age, color, owner):
-        self.name = name #storing value
-        self.age = age
-        self.color = color
-        self.owner = owner  # Correctly assign the owner object
+# class Dogs:
+#     def __init__(self, name, age, color, owner):
+#         self.name = name #storing value
+#         self.age = age
+#         self.color = color
+#         self.owner = owner  # Correctly assign the owner object
 
-    def bark(self): # defining methon
-        print('whoof whoof')
+#     def bark(self): # defining methon
+#         print('whoof whoof')
 
-class Owner:
-    def __init__(self, name, address, number):
-        self.name = name
-        self.address = address
-        self.number = number
+# class Owner:
+#     def __init__(self, name, address, number):
+#         self.name = name
+#         self.address = address
+#         self.number = number
 
-# Correct variable name and instantiation
-owner = Owner('Abdullah', 'Dhaka', 847755)
+# # Correct variable name and instantiation
+# owner = Owner('Abdullah', 'Dhaka', 847755)
 
-# Pass the 'owner' object without parentheses
-person = Dogs('Kawser', 30, 'black', owner)
-print(person.owner.name)
+# # Pass the 'owner' object without parentheses
+# person = Dogs('Kawser', 30, 'black', owner)
+# person3 = Dogs ('abdullah al kawser',46,'red')
+# print(person.owner.name)
+# person2 = Dogs('hassan', 31, 'red', owner)
 
-# Print details
-print(person.name, person.age, person.color)
-person.bark()
+# # Print details
+# print(person.name, person.age, person.color)
+# print(person2.name,person2.age)
+# person.bark()
+
+
+#  Accessing Object Data
+class Car:
+    def __init__(self,brand,model,year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+
+# Creating an object
+mycar = Car('lamborgini','corola', 20330) 
+
+# Accessing attributes
+print (mycar.brand)  # Output: Toyota
+print(mycar.model)  # Output: Corolla
+print(mycar.year)   # Output: 2020
+
+#Modifying Object Data
+mycar.year = 20203
+print(mycar.year)
