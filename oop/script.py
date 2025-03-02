@@ -74,20 +74,138 @@
 
 
 #  Accessing Object Data
+# class Car:
+#     def __init__(self,brand,model,year):
+#         self.brand = brand
+#         self.model = model
+#         self.year = year
+
+# # Creating an object
+# mycar = Car('lamborgini','corola', 20330) 
+
+# # Accessing attributes
+# print (mycar.brand)  # Output: Toyota
+# print(mycar.model)  # Output: Corolla
+# print(mycar.year)   # Output: 2020
+
+# #Modifying Object Data
+# mycar.year = 20203
+# print(mycar.year)
+
+
+class Parent:
+    def __init__(self,name,age ):
+        self.name = name  # Public attribute
+        self._age = age  # Protected attribute
+
+    def show_info(self):
+      print(f"Name: {self.name}, Age: {self._age}")
+
+# Creating an object
+p = Parent("Alice", 25)
+p.show_info()  # Output: Name: Alice, Age: 25
+
+# Modifying protected attribute directly (Not recommended)
+p._age = 200
+print(p._age)  # Output: 25
+
+# Accessing protected attribute (Not recommended, but possible)
+print(p._age)  # Output: 25;
+
+
+#  Using Methods to Access and Modify Data
+
 class Car:
-    def __init__(self,brand,model,year):
+    def __init__(self, brand, model, year):
         self.brand = brand
         self.model = model
         self.year = year
 
+    def get_year(self):
+        return self.year  # Getter method
+
+    def set_year(self, new_year):
+        if new_year >= 1886:  # Validating before modifying
+            self.year = new_year
+        else:
+            print("Invalid year!")
+
 # Creating an object
-mycar = Car('lamborgini','corola', 20330) 
+my_car = Car("Toyota", "Corolla", 2020)
 
-# Accessing attributes
-print (mycar.brand)  # Output: Toyota
-print(mycar.model)  # Output: Corolla
-print(mycar.year)   # Output: 2020
+# Using getter and setter
+print(my_car.get_year())  # Output: 2020
+my_car.set_year(2025)     # Modifying with setter
+print(my_car.get_year())  # Output: 2025
 
-#Modifying Object Data
-mycar.year = 20203
-print(mycar.year)
+# Modifying Private Attributes with Getters and Setters
+
+
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance  # Private attribute
+
+    def get_balance(self):
+        return self.__balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+        else:
+            print("Invalid deposit amount!")
+
+# Creating an object
+account = BankAccount(1000)
+
+# Accessing private attribute via getter
+print(account.get_balance())  # Output: 1000
+
+# Modifying private attribute via method
+account.deposit(500)
+print(account.get_balance())  # Output: 1500
+
+
+#  Using @property for Read-Only Access
+class Car:
+    def __init__(self, brand, model, year):
+        self._year = year  # Using single underscore to indicate it's a "protected" attribute
+
+    @property
+    def year(self):
+        return self._year  # Read-only property
+
+# Creating an object
+my_car = Car("Toyota", "Corolla", 2020)
+
+# Accessing like an attribute
+print(my_car.year)  # Output: 2020
+
+# Trying to modify (will raise an error)
+# my_car.year = 2025  # AttributeError: can't set attribute
+
+
+
+# Python's "Consenting Adults" philosophy and private attributes
+class Person:
+    def __init__(self, name, age):
+        self.name = name      # Public
+        self._age = age       # Protected (convention)
+        self.__salary = 5000  # Private (name mangling applied)
+
+    def show_salary(self):
+        print(f"Salary: {self.__salary}")  # Accessing within class
+
+# Creating an object
+p = Person("Alice", 30)
+
+# Public access
+print(p.name)   # ✅ Allowed (Output: Alice)
+
+# Protected access (not recommended but possible)
+print(p._age)   # ✅ Allowed (Output: 30)
+
+# Private access (will raise an AttributeError)
+# print(p.__salary)  # ❌ AttributeError
+
+# But can still access using name mangling (not recommended)
+print(p._Person__salary)  # ✅ Allowed (Output: 5000)
