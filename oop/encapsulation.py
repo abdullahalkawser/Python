@@ -1,4 +1,4 @@
-class BankAccount:
+class BankAccounts:
     def __init__(self, account_number, balance):
         self.account_number = account_number  # Public Attribute
         self._bank_name = "XYZ Bank"  # Protected Attribute
@@ -25,7 +25,7 @@ class BankAccount:
         return self.__balance
 
 # Creating an object
-account = BankAccount("123456789", 5000)
+account = BankAccounts("123456789", 5000)
 
 # Accessing Public Attributes
 print("Account Number:", account.account_number)  # Works
@@ -37,14 +37,19 @@ print("Bank Name:", account._bank_name)  # Works, but should be avoided
 # print(account.__balance)  # AttributeError: 'BankAccount' object has no attribute '__balance'
 
 # Accessing Private Attributes using a Public Method
+# Accessing balance using a getter
 print("Balance:", account.get_balance())  # Works
 
 # Depositing and Withdrawing Money
+
+# Updating balance using a setter
+# account.set_balance(7000)
 account.deposit(2000)
 account.withdraw(1000)
 
 # Accessing Private Attribute with Name Mangling (not recommended)
-print("Balance using name mangling:", account._BankAccount__balance)  # Works but not recommended
+print("Balance using name mangling:", account._BankAccounts__balance)  # Works but not 
+# recommended  Recommended Approach 1: Using Getter & Setter Methods
 
 
 
@@ -61,3 +66,11 @@ Name Mangling (_ClassName__variable): Python internally renames private variable
 ✔ Data Hiding – Prevents accidental modification of sensitive data.
 ✔ Security – Protects critical information from external modifications.
 ✔ Control – Only specific methods control how the data is accessed and modified."""
+
+"""Conclusion: Why Should You Use Encapsulation?
+✔ Protects sensitive data from unauthorized access
+✔ Prevents accidental modifications and maintains data integrity
+✔ Makes code easier to maintain, scale, and debug
+✔ Encourages abstraction by exposing only necessary details
+
+Would you like me to give a real-world analogy for better understanding?"""
