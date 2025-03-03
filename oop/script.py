@@ -209,3 +209,4 @@ print(p._age)   # ✅ Allowed (Output: 30)
 
 # But can still access using name mangling (not recommended)
 print(p._Person__salary)  # ✅ Allowed (Output: 5000)
+
