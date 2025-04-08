@@ -35,3 +35,9 @@ print(fruits[0:3])   # ['apple', 'banana', 'cherry']
 print(fruits[-2:])   # ['mango', 'pineapple']
 print(fruits[::2])   # ['apple', 'cherry', 'pineapple']
 print(fruits[::-1])  # ['pineapple', 'mango', 'cherry', 'banana', 'apple']
+
+
+
+
+
+
