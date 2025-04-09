@@ -70,3 +70,7 @@ else :
 numbwrs = [1,23,4,5,6,7,88,]    
 for num in numbwrs:
     print(num)
+print(list(range(1, 6)))  # [1, 2, 3, 4, 5]
+
+for i in range(1, 10, 2):
+    print(i)
