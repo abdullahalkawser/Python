@@ -16,7 +16,8 @@ print(student["department"])
 
 
 # Add a new key-value pair
-student["semester"] = 8
+student["name"] = 'abdullaha al kawser'
+student["semester"] = 10;
 
 # Update an existing value
 student["cgpa"] = 3.23
