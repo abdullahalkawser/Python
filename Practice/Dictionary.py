@@ -96,7 +96,7 @@ print(student)               # {}
 A set is an unordered collection of unique elements.
 It's defined using curly braces {} or the set() function.'''
 
-fruits = {"apple", "banana", "cherry", "banana"}
+fruits = {"apple", "banana", "cherry", "banana",'mango', 'green coconusts'}
 print(fruits)  # Output: {'apple', 'banana', 'cherry'} — duplicates removed
 
 # You can also create an empty set like this:
