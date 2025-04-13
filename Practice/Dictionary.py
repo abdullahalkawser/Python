@@ -35,12 +35,13 @@ print(student)
 
 students = {
     "101": {
-        "name": "Anisa",
+        "name": "abdullah",
         "department": "CSE",
         "cgpa": 3.8
     },
     "102": {
-        "name": "Rafi",
+        "name": "Rafi hassan"
+        "",
         "department": "EEE",
         "cgpa": 3.6
     }
